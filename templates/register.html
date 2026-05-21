@@ -1,0 +1,46 @@
+{% extends "base.html" %} {% block content %}
+
+<div
+  class="container d-flex justify-content-center align-items-center min-vh-85"
+>
+  <div class="register-card p-5">
+    <!-- Header -->
+    <div class="text-center mb-4">
+      <h2 class="fw-bold text-gradient">Create Account 🚀</h2>
+      <p class="text-light opacity-75">
+        Join MedPredict AI for smart health insights
+      </p>
+    </div>
+
+    <!-- Form -->
+    <form method="POST" action="/register">
+      <div class="mb-4 input-box">
+        <input type="text" name="username" required />
+        <label>Full Name</label>
+      </div>
+
+      <div class="mb-4 input-box">
+        <input type="email" name="email" required />
+        <label>Email Address</label>
+      </div>
+
+      <div class="mb-4 input-box">
+        <input type="password" name="password" required />
+        <label>Password</label>
+      </div>
+
+      <button class="btn gradient-btn w-100 py-2 mb-3">👤 Register</button>
+
+      <div class="text-center">
+        <span class="text-light">Already have an account?</span>
+        <a href="{{ url_for('login') }}" class="link-custom"> Login </a>
+      </div>
+    </form>
+
+    {% if error %}
+    <div class="alert alert-danger mt-3 text-center">{{ error }}</div>
+    {% endif %}
+  </div>
+</div>
+
+{% endblock %}

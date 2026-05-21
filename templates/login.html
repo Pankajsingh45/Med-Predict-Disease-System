@@ -1,0 +1,35 @@
+{% extends "base.html" %} {% block content %}
+
+<div
+  class="container d-flex justify-content-center align-items-center min-vh-80"
+>
+  <div class="login-card p-5">
+    <!-- Title -->
+    <div class="text-center mb-4">
+      <h2 class="fw-bold text-gradient">Welcome Back 👋</h2>
+      <p class="text-light opacity-75">Login to continue using MedPredict AI</p>
+    </div>
+
+    <!-- Form -->
+    <form method="post">
+      <div class="mb-4 input-box">
+        <input type="text" name="username" required />
+        <label>Username</label>
+      </div>
+
+      <div class="mb-4 input-box">
+        <input type="password" name="password" required />
+        <label>Password</label>
+      </div>
+
+      <button class="btn gradient-btn w-100 py-2 mb-3">🔐 Login</button>
+
+      <div class="text-center">
+        <span class="text-light">Don't have an account?</span>
+        <a href="{{ url_for('register') }}" class="link-custom"> Register </a>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

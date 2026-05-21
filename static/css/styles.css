@@ -1,0 +1,217 @@
+/* ================= ROOT VARIABLES ================= */
+:root {
+  --bg-primary: #0b1220;
+  --bg-secondary: #111a2e;
+  --card-bg: rgba(255, 255, 255, 0.06);
+  --card-border: rgba(255, 255, 255, 0.08);
+
+  --text-primary: #e5e7eb;
+  --text-muted: #9ca3af;
+
+  --accent: #38bdf8;
+  --accent-2: #22c55e;
+
+  --danger: #ef4444;
+  --warning: #f59e0b;
+
+  --radius: 14px;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* ================= GLOBAL ================= */
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+/* Smooth UI */
+* {
+  transition: all 0.2s ease-in-out;
+}
+
+/* ================= TEXT ================= */
+.text-gradient {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+/* ================= LAYOUT HELPERS ================= */
+.min-vh-80 { min-height: 80vh; }
+.min-vh-85 { min-height: 85vh; }
+
+/* ================= NAVBAR ================= */
+.glass-nav {
+  background: rgba(10, 15, 25, 0.75) !important;
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--card-border);
+}
+
+.navbar-brand {
+  font-weight: 600;
+  font-size: 20px;
+  color: white !important;
+  letter-spacing: 0.5px;
+}
+
+.nav-link {
+  color: var(--text-muted) !important;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: var(--accent) !important;
+}
+
+/* ================= CARD (REAL WORLD STYLE) ================= */
+.glass-card,
+.login-card,
+.register-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 22px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(56, 189, 248, 0.3);
+}
+
+/* ================= INPUT SYSTEM ================= */
+.input-box {
+  position: relative;
+  margin-bottom: 18px;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+  outline: none;
+}
+
+.input-box input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+}
+
+.input-box label {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 14px;
+  pointer-events: none;
+  transition: 0.2s;
+}
+
+.input-box input:focus + label,
+.input-box input:valid + label {
+  top: -8px;
+  font-size: 12px;
+  color: var(--accent);
+}
+
+/* ================= BUTTON ================= */
+.gradient-btn {
+  background: linear-gradient(135deg, var(--accent), #2563eb);
+  border: none;
+  color: white;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.gradient-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(56, 189, 248, 0.3);
+}
+
+/* ================= INPUT FIELD ================= */
+.custom-input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid transparent;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.custom-input:focus {
+  border-color: var(--accent);
+  outline: none;
+}
+
+/* ================= RESULT BOX ================= */
+.result-box {
+  margin-top: 18px;
+  padding: 18px;
+  border-radius: var(--radius);
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid var(--card-border);
+}
+
+/* ================= HOSPITAL CARD ================= */
+.hospital-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--card-border);
+  padding: 14px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.hospital-card:hover {
+  border-color: var(--accent);
+  transform: scale(1.01);
+}
+
+/* ================= HISTORY TABLE ================= */
+.history-scroll {
+  max-height: 420px;
+  overflow-y: auto;
+}
+
+.history-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+
+.history-scroll::-webkit-scrollbar-thumb {
+  background: var(--accent);
+  border-radius: 10px;
+}
+
+/* ================= EMPTY STATE ================= */
+.empty-state {
+  text-align: center;
+  opacity: 0.7;
+}
+
+/* ================= ANIMATION ================= */
+.fade-in {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
